@@ -1,0 +1,27 @@
+<p>
+  {{ helloText }}
+</p>
+
+<button [disabled]="!allowClick" (click)="onClickFunc()">BUTTON</button>
+{{clickText}}
+
+<br>
+<input type="text" [(ngModel)]="testText"/>
+<br>
+{{testText}}
+
+<br>
+<button (click)="showContent()">BUTTON</button>
+<div *ngIf="show; else elseContent">
+  <p>IF show = {{show}}</p>
+</div>
+<ng-template #elseContent>
+<p>ELSE show = {{show}}</p>
+</ng-template>
+
+<br>
+<ul>
+  <li  *ngFor="let elem of arr"> {{elem.name}} </li>
+</ul>
+
+<p> {{ currentDate.time }} {{ currentDate.date }} </p>
