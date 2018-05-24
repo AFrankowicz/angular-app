@@ -3,14 +3,13 @@
 </p>
 
 <button [disabled]="!allowClick" (click)="onClickFunc()">BUTTON</button>
-{{clickText}}
+{{ clickText }}
 
 <br>
 <input type="text" [(ngModel)]="testText"/>
 <br>
-{{testText}}
+{{ testText }}
 
-<br>
 <button (click)="showContent()">BUTTON</button>
 <div *ngIf="show; else elseContent">
   <p>IF show = {{show}}</p>
@@ -19,9 +18,12 @@
 <p>ELSE show = {{show}}</p>
 </ng-template>
 
-<br>
 <ul>
-  <li  *ngFor="let elem of arr"> {{elem.name}} </li>
+  <li  *ngFor="let elem of arr"> {{elem }} </li>
+</ul>
+
+<ul>
+  <li  *ngFor="let elem of people"> {{elem.name}} </li>
 </ul>
 
 <p> {{ currentDate.time }} {{ currentDate.date }} </p>

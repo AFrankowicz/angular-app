@@ -1,3 +1,13 @@
-<p>
-  testr works!
-</p>
+<form form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input [(ngModel)]="model.name" type="text" id="name" name="name"required>
+      </div>
+
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input [(ngModel)]="model.age" type="number" id="age" name="id">
+      </div>
+
+      <button type="submit">Submit</button>
+</form>

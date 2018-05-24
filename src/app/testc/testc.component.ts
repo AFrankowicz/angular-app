@@ -5,23 +5,26 @@ import { PeopleService } from '../people/people.service';
 @Component({
   selector: 'app-testc',
   templateUrl: './testc.component.html',
+  styleUrls: ['./testc.component.css'],
   providers: [PeopleService]
 })
 export class TestcComponent implements OnInit {
   helloText = "hello";
   allowClick = true;
   clickText = "not clicked";
-  testText= ""
+  testText= "";
   show = false;
-  arr;// = ["one", "two", "three", "four"];
+  arr = ["one", "two", "three", "four"];
+  people = [];
   currentDate = null;
 
   constructor(private peopleService: PeopleService) {}
 
+
   ngOnInit() {
-    this.arr = this.peopleService.getPeople();
+    this.people = this.peopleService.getPeople();
     this.peopleService.getTime().subscribe(
-      data => { this.currentDate = data.json();}
+          data => { this.currentDate = data.json();}
     );
   }
 
@@ -33,5 +36,6 @@ export class TestcComponent implements OnInit {
   showContent() {
     this.show = !this.show;
   }
+
 
 }

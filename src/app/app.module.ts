@@ -4,15 +4,17 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router'
 
+import { PeopleService } from './people/people.service';
 import { AppComponent } from './app.component';
 import { TestcComponent } from './testc/testc.component';
-import { PeopleService } from './people/people.service';
 import { TestrComponent } from './testr/testr.component';
 
 const appRoutes: Routes = [
-  { path: '', component: TestcComponent, pathMatch: 'full'},
-  { path: 'testr', component: TestrComponent }
+ { path: '', component: TestcComponent, pathMatch: 'full'},
+ { path: 'testr', component: TestrComponent },
+ { path: '**', redirectTo: '/', pathMatch: 'full'}
 ];
+
 
 @NgModule({
   declarations: [
